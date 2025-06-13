@@ -121,7 +121,7 @@ const topProducts = ref([
     
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-      <StatCard 
+      <DashboardStatCard 
         v-for="(stat, index) in stats" 
         :key="index"
         :title="stat.title"
@@ -138,12 +138,12 @@ const topProducts = ref([
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
       <!-- Recent Transactions -->
       <div class="lg:col-span-2">
-        <RecentTransactions :transactions="recentTransactions" />
+        <DashboardRecentTransactions :transactions="recentTransactions" />
       </div>
       
       <!-- Top Products -->
       <div>
-        <TopProducts :products="topProducts" />
+        <DashboardTopProducts :products="topProducts" />
       </div>
     </div>
     

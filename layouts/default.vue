@@ -185,7 +185,7 @@
       <main class="flex-1 p-6">
         <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
           <!-- Page content -->
-          <slot />
+          <NuxtPage />
         </div>
       </main>
       
