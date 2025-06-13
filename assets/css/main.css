@@ -1,2 +1,27 @@
+/* assets/css/main.css */
 @import "tailwindcss";
-@import "@nuxt/ui"
+@import "@nuxt/ui";
+
+/* 🎨 Define custom color scales */
+@theme static {
+  --color-koperasi-50:  #F0FFF4;
+  --color-koperasi-100: #C8E6C9;
+  --color-koperasi-500: #4CAF50;
+  --color-koperasi-700: #2E7D32;
+
+  --color-neutral-50:   #FFFFFF;
+  --color-neutral-100:  #F9FAFA;
+  --color-neutral-500:  #E5E7EB;
+}
+
+/* Map CSS variables to Nuxt UI tokens */
+:root {
+  --ui-primary:   var(--color-koperasi-500);
+  --ui-secondary: #FF9800;
+  --ui-accent:    #03A9F4;
+  --ui-error:     #F44336;
+  --ui-warning:   #FFC107;
+  --ui-info:      #00ACC1;
+  --ui-success:   #8BC34A;
+  --ui-neutral:   var(--color-neutral-50);
+}
