@@ -134,6 +134,11 @@ const topProducts = ref([
       />
     </div>
     
+    <!-- Sales Chart -->
+    <div class="mb-6">
+      <DashboardSalesChart />
+    </div>
+    
     <!-- Main Content Area -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
       <!-- Recent Transactions -->
@@ -147,15 +152,9 @@ const topProducts = ref([
       </div>
     </div>
     
-    <!-- Additional Content -->
-    <div class="bg-white rounded-xl shadow-sm p-6">
-      <h2 class="text-lg font-semibold mb-4">Statistik Penjualan</h2>
-      <p class="text-gray-600">
-        Grafik statistik penjualan dapat ditampilkan di sini menggunakan library seperti Chart.js, ApexCharts, dll.
-      </p>
-      <div class="w-full h-64 bg-gray-50 rounded-lg border border-dashed border-gray-300 flex items-center justify-center mt-4">
-        <span class="text-gray-400">Widget Grafik</span>
-      </div>
+    <!-- Category Distribution -->
+    <div class="mb-6">
+      <DashboardCategoryDistribution />
     </div>
   </div>
 </template>
