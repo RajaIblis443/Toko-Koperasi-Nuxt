@@ -1,23 +1,23 @@
 <script setup lang="ts">
 const { $supabase } = useNuxtApp()
 
-const produk = ref<any>([])
+const anggota = ref<any>([])
 const loading = ref(true)
 const errorMsg = ref('')
 
 onMounted(async () => {
   try {
     const { data, error } = await $supabase
-      .from('products')
+      .from('members')
       .select('*')
 
     if (error) {
       console.error('Supabase error:', error.message)
-      errorMsg.value = 'Gagal mengambil data produk. Silakan coba lagi nanti.'
+      errorMsg.value = 'Gagal mengambil data anggota. Silakan coba lagi nanti.'
       return
     }
 
-    produk.value = data
+    anggota.value = data
   } catch (err) {
     console.error('Unexpected error:', err)
     errorMsg.value = 'Terjadi kesalahan tak terduga. 😵‍💫'
@@ -28,14 +28,14 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="loading">🚀 Loading produk...</div>
+  <div v-if="loading">🚀 Loading data anggota...</div>
 
   <div v-else-if="errorMsg">
     ⚠️ {{ errorMsg }}
   </div>
 
   <ul v-else>
-    <li v-for="item in produk" :key="item.id_produk">
+    <li v-for="item in anggota" :key="item.id">
       🛍️ {{ item.name_produk }}
     </li>
   </ul>
